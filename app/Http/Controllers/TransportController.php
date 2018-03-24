@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Bus;
 use App\Car;
 use App\Lorry;
-use Illuminate\Http\Request;
 
 class TransportController extends Controller
 {
@@ -14,7 +13,7 @@ class TransportController extends Controller
         $cars = Car::all();
         $buses = Bus::all();
         $lorries = Lorry::all();
-        return view('transport', [
+        return response()->json([
             'cars' => $cars,
             'buses' => $buses,
             'lorries' => $lorries

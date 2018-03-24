@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -9,7 +10,11 @@ class CarController extends Controller
 
     public function index()
     {
-        //
+        $cars = Car::all();
+
+        return response()->json([
+            'cars' => $cars
+        ]);
     }
 
     public function create()
